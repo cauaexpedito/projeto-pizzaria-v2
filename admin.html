@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard do Dono - Pizzaria SaaS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Pizzaria SaaS</div>
+    <nav>
+      <button id="logoutButton" class="button button-secondary">Sair</button>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="section stats-row">
+      <article class="stat-card">
+        <h3>Pedidos</h3>
+        <p id="totalOrders">0</p>
+      </article>
+      <article class="stat-card">
+        <h3>Vendas</h3>
+        <p id="totalRevenue">R$ 0,00</p>
+      </article>
+      <article class="stat-card">
+        <h3>Itens no cardápio</h3>
+        <p id="menuCount">0</p>
+      </article>
+    </section>
+
+    <section class="section dashboard-section">
+      <div class="section-header">
+        <div>
+          <h1>Área do dono</h1>
+          <p>Visualize o painel de controle e os itens já cadastrados.</p>
+        </div>
+      </div>
+
+      <p id="pageMessage" class="message"></p>
+      <div class="admin-grid">
+        <div class="admin-panel">
+          <h2>Cardápio atual</h2>
+          <div id="menuCards" class="menu-card-grid">
+            <p>Carregando cardápio...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-upload-section">
+      <div class="section-header">
+        <div>
+          <h2>Envio de produto</h2>
+          <p>Adicione novos itens ao cardápio de forma rápida e fácil.</p>
+        </div>
+      </div>
+
+      <div class="admin-grid single-column-panel">
+        <div class="admin-panel">
+          <h2 id="itemFormTitle">Adicionar novo item</h2>
+          <form id="addItemForm">
+            <input type="hidden" id="editItemId" name="editItemId" />
+            <input type="hidden" id="currentImageUrl" name="currentImageUrl" />
+
+            <label for="itemName">Nome</label>
+            <input id="itemName" type="text" required />
+
+            <label for="itemDescription">Descrição</label>
+            <input id="itemDescription" type="text" required />
+
+            <label for="itemPrice">Preço</label>
+            <input id="itemPrice" type="number" step="0.01" min="0" required />
+
+            <div class="form-group">
+              <label>Imagem do produto</label>
+              <p class="hint">Selecione ou arraste a imagem para enviar junto com o produto.</p>
+              <div id="imageDropzone" class="image-dropzone">
+                <input id="itemImage" type="file" accept="image/*" hidden />
+                <div class="upload-message">
+                  <span class="upload-icon">📸</span>
+                  <strong>Arraste a imagem aqui</strong>
+                  <small>PNG, JPG ou WebP — até 10 MB</small>
+                </div>
+              </div>
+
+              <div id="imagePreview" class="image-preview hidden">
+                <img src="" alt="Prévia da imagem do item" />
+                <button id="clearImageButton" type="button" class="button button-secondary">Remover imagem</button>
+              </div>
+
+              <p id="uploadImageMessage" class="message"></p>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="submitItemButton" class="button">Adicionar</button>
+              <button type="button" id="cancelEditButton" class="button button-secondary hidden">Cancelar edição</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section small-section">
+      <h2>Pedidos recentes</h2>
+      <div id="recentOrders" class="cart-panel"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

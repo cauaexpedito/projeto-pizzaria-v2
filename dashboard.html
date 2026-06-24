@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Churrascaria Paulista</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">Churrascaria Paulista</div>
+    <nav>
+      <button id="logoutButton" class="button button-secondary">Sair</button>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h1>Bem-vindo, <span id="userName">Cliente</span></h1>
+          <p>Confira o nosso cardápio e faça seu pedido com facilidade.</p>
+        </div>
+      </div>
+
+      <p id="pageMessage" class="message"></p>
+      <div class="grid" id="menuGrid"></div>
+    </section>
+
+    <section class="section small-section">
+      <h2>Seu carrinho</h2>
+      <div id="cartArea" class="cart-panel">
+        <p>Adicione itens do cardápio para ver aqui.</p>
+      </div>
+    </section>
+
+    <section class="section small-section">
+      <h2>Histórico de pedidos</h2>
+      <div id="historyArea" class="cart-panel"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

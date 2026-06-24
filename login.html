@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Churrascaria Paulista</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">Churrascaria Paulista</div>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-decorations" aria-hidden="true">
+      <div class="decor-pizza decor-pizza-1"></div>
+      <div class="decor-pizza decor-pizza-2"></div>
+      <div class="decor-pizza decor-pizza-3"></div>
+    </div>
+
+    <div class="auth-content role-cliente">
+      <section class="auth-box">
+        <div class="auth-panel">
+          <div class="auth-intro">
+            <span class="eyebrow">Acesso rápido</span>
+            <h1 id="pageTitle">Entre na sua conta</h1>
+            <p id="pageDescription">Use o acesso de cliente ou dono para começar a gerenciar pedidos, cardápio e
+              ofertas.</p>
+          </div>
+
+          <form id="loginForm">
+            <input type="hidden" id="role" name="role" value="cliente" />
+
+            <div class="role-switcher" role="tablist" aria-label="Escolher tipo de login">
+              <button type="button" class="role-button active" data-role="cliente" aria-pressed="true">Cliente</button>
+              <button type="button" class="role-button" data-role="dono" aria-pressed="false">Dono</button>
+            </div>
+
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="cliente@exemplo.com" required />
+
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" placeholder="Digite sua senha" required
+              minlength="8" />
+
+            <button type="submit" class="button submit-button">Entrar</button>
+
+            <p id="loginHint" class="hint">Use cliente@exemplo.com / cliente123 ou dono@pizzaria.com / donopizza.</p>
+            <p id="loginMessage" class="message"></p>
+            <p class="hint secondary">Ainda não tem conta? <a href="register.html">Registre-se com seu e-mail</a>.</p>
+          </form>
+        </div>
+      </section>
+
+      <aside class="auth-visual" aria-hidden="true">
+        <div class="auth-graphic">
+          <div class="pizza-main"></div>
+          <div class="pizza-wedge pizza-wedge-1"></div>
+          <div class="pizza-wedge pizza-wedge-2"></div>
+          <div class="pizza-wedge pizza-wedge-3"></div>
+          <div class="topping topping-1"></div>
+          <div class="topping topping-2"></div>
+          <div class="topping topping-3"></div>
+          <div class="topping topping-4"></div>
+        </div>
+        <div class="visual-copy">
+          <span class="eyebrow">Interativo</span>
+          <span id="visualRoleBadge" class="visual-copy-badge">Cliente</span>
+          <h2 id="visualCardTitle">Cliente</h2>
+          <p id="visualCardSubtitle">Encontre sua pizza, aproveite ofertas exclusivas e peça com poucos cliques.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

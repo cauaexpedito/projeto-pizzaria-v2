@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrar - Churrascaria Paulista</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">Churrascaria Paulista</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Entrar</a>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-box">
+      <h1>Criar conta</h1>
+      <p>Use seu próprio e-mail para fazer login e acessar o sistema.</p>
+
+      <form id="registerForm">
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" placeholder="Seu nome" required />
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="seu@email.com" required />
+
+        <label for="password">Senha</label>
+        <input id="password" name="password" type="password" placeholder="Crie uma senha" required minlength="8" />
+
+        <fieldset class="role-fieldset">
+          <legend>Tipo de conta</legend>
+          <label><input type="radio" name="role" value="cliente" checked /> Cliente</label>
+          <label><input type="radio" name="role" value="dono" /> Dono</label>
+        </fieldset>
+
+        <button type="submit" class="button">Registrar</button>
+        <p id="registerMessage" class="message"></p>
+        <p class="hint">Já tem conta? <a href="login.html">Faça login</a>.</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
